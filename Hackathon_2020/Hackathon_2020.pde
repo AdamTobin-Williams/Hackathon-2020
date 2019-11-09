@@ -4,6 +4,7 @@ final ArrayList<Level> Levels = new ArrayList<Level>();
 Platform _p1 = new Platform(100, 600, 600, 100, color(250, 120, 0));
 Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
 
+
 void setup() {
   size(1200, 800);
 
@@ -26,6 +27,7 @@ void draw() {
     Players.get(i).display();
     Players.get(i).move();
   }
+
 }
 
 

@@ -15,6 +15,13 @@ class HorizontalDoor extends Door {
         else if (super.x > F) super.x -= speed;
       }
     }
+    else {
+      if(super.x >= xS-speed && super.x <= xS+speed) x = xS;
+      else{
+        if(super.x < xS) super.x += speed;
+        else if(super.x > xS) super.x -= speed;
+      }
+    }
   }
 
   public void open() {
