@@ -1,22 +1,18 @@
-class VerticalDoor extends Platform {
-
-  float yF;
-  int speed;
-  boolean open;
+class VerticalDoor extends Door {
 
   public VerticalDoor(float x, float y0, float yF, float h, color c, int speed) {
-    super(x, y0, 20, h,c);
-    this.yF = yF;
-    this.speed = speed;
-    open = false;
+    super(x, y0, yF, 20, h, c, speed);
+    //this.yF = yF;
+    //this.speed = speed;
+    //open = false;
   }
 
   public void update() {
     if (open) {
-      if (super.y >= yF-speed && super.y <= yF+speed) y = yF;
+      if (super.y >= F-speed && super.y <= F+speed) y = F;
       else {
-        if (super.y < yF) super.y += speed;
-        else if (super.y > yF) super.y -= speed;
+        if (super.y < F) super.y += speed;
+        else if (super.y > F) super.y -= speed;
       }
     }
   }
