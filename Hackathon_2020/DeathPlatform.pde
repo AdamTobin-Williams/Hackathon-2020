@@ -9,5 +9,4 @@ class DeathPlatform extends Platform {
       p.kill();
     }
   }
-  
 }

@@ -29,17 +29,17 @@ class Platform extends CollidableObject {
 
         p.x = x-Player.w/2;
         p.xs = 0;
-      } else if (p.x-Player.w/2+p.xs <x+w && p.y>y && p.y-Player.h<x+w && p.x+Player.w/2<x+p.xs) {
+      } else if (p.x-Player.w/2+p.xs <x+w && p.y>y && p.y-Player.h<x+w && p.x-Player.w/2<x+p.xs) {
 
-        p.x = x-Player.w/2;
+        p.x = x+w+Player.w/2;
         p.xs = 0;
-      } else if (p.x+Player.w/2 >x && p.y+p.xs>y && p.y-Player.h<x+w && p.x-Player.w/2<x+w) {
+      } else if (p.x+Player.w/2 >x && p.y+p.ys>y && p.y<y+p.ys && p.x-Player.w/2<x+w) {
 
-        p.x = x-Player.w/2;
+        p.y = y;
         p.ys = 0;
-      } else if (p.x+Player.w/2+p.xs >x && p.y>y && p.y-Player.h<x+w && p.x+Player.w/2<x+p.xs) {
+      } else if (p.x+Player.w/2 >x && p.y-Player.h+p.ys<y+h && p.y-Player.h<y+p.ys && p.x-Player.w/2<x+w) {
 
-        p.x = x-Player.w/2;
+        p.y = y+h+Player.h;
         p.ys = 0;
       }
     }
