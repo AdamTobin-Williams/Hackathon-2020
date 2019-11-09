@@ -17,6 +17,7 @@ abstract class CollidableObject {
   
   public void display(){
     fill(c);
+
     rect(x, y, w, h);
   }
 }

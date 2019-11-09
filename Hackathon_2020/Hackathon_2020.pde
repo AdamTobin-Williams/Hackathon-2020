@@ -11,3 +11,15 @@ void setup() {
 void draw() {
   background(0);
 }
+
+
+void keyPressed() {
+  for (int i = 0; i < Players.size(); i++) {
+    Players.get(i).setMove((char)keyCode, true);
+  }
+}
+void keyReleased() {
+  for (int i = 0; i < Players.size(); i++) {
+    Players.get(i).setMove((char)keyCode, false);
+  }
+}

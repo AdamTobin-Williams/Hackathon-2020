@@ -5,6 +5,8 @@ class Player {
   public static final float h = 40; // change
   public final String name;
   public final char keyU, keyL, keyD, keyR;
+  public boolean onGround;
+  public boolean isLeft, isRight, isUp, isDown;
 
   public Player (String name, char keyU, char keyL, char keyD, char keyR) {
     this.name = name;
@@ -17,6 +19,7 @@ class Player {
   public void move() {
     x+=xs;
     y+=ys;
+    onGround = false;
   }
 
   public void kill() {
@@ -26,5 +29,19 @@ class Player {
   public void display() {
     fill(255); //placeholder
     rect(x, y, 20, 40);
+  }
+
+  boolean setMove(char k, boolean b) {
+    if (k == keyU) {
+      return isUp = b;
+    } else if(k==keyD){
+      return isDown = b;
+    } else if (k==keyL){
+      return isLeft = b;
+    } else if (k==keyR){
+      return isRight = b;
+    } else {
+      return b;
+    }
   }
 }

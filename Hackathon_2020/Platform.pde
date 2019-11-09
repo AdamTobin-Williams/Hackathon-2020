@@ -8,11 +8,6 @@ class Platform extends CollidableObject {
     this.c = c;
   }
 
-  public void display() {
-    fill(c);
-    rect(x, y, w, h);
-  }
-
   public void updateX(float u) {
     this.x=x+u;
     this.w=w+u;
@@ -37,6 +32,7 @@ class Platform extends CollidableObject {
 
         p.y = y;
         p.ys = 0;
+        p.onGround = true;
       } else if (p.x+Player.w/2 >x && p.y-Player.h+p.ys<y+h && p.y-Player.h<y+p.ys && p.x-Player.w/2<x+w) {
 
         p.y = y+h+Player.h;

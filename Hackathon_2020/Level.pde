@@ -1,27 +1,27 @@
 class Level {
-  final ArrayList<Platform> platforms;
+  final ArrayList<CollidableObject> CollidableObjects;
   final color backgroundColor;
 
-  public Level(ArrayList<Platform> platforms, color backgroundColor) {
-    this.platforms = platforms;
+  public Level(ArrayList<CollidableObject> CollidableObjects, color backgroundColor) {
+    this.CollidableObjects = CollidableObjects;
     this.backgroundColor = backgroundColor;
   }
 
-  public Level(color backgroundColor, Platform... platforms) {
+  public Level(color backgroundColor, CollidableObject... CollidableObjects) {
     this.backgroundColor = backgroundColor;
-    this.platforms = new ArrayList<Platform>();
-    for (int i = 0; i < platforms.length; i++) {
-      this.platforms.add(platforms[i]);
+    this.CollidableObjects = new ArrayList<CollidableObject>();
+    for (int i = 0; i < CollidableObjects.length; i++) {
+      this.CollidableObjects.add(CollidableObjects[i]);
     }
   }
   
-  public Platform getPlatform(int i) {
-    return platforms.get(i);
+  public CollidableObject getCollidableObject(int i) {
+    return CollidableObjects.get(i);
   }
   
   public void display() {
-    for (int i = 0; i < platforms.size(); i++) {
-      platforms.get(i).display();
+    for (int i = 0; i < CollidableObjects.size(); i++) {
+      CollidableObjects.get(i).display();
     }
   }
 }
