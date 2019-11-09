@@ -1,40 +1,41 @@
 final ArrayList<Player> Players = new ArrayList<Player>();
 final ArrayList<Level> Levels = new ArrayList<Level>();
-Button button = new Button (500, 500, 20, 20, #6099FA);
-VerticalDoor door = new VerticalDoor(800, 200, 300, 100, 255, 2);
+
+Platform _p1 = new Platform(100, 600, 600, 100, color(250, 120, 0));
+Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
 
 void setup() {
   size(1200, 800);
 
   Players.add(new Player("Tobias", 'w', 'a', 's', 'd'));
   Players.add(new Player("Charlie", (char) UP, (char) LEFT, (char) DOWN, (char) RIGHT));
+  
+  Players.get(0).y = 400;
+  Players.get(1).y = 500;
+  Players.get(0).x = 400;
+  Players.get(1).x = 500;
 }
 
 void draw() {
   background(0);
-
-  button.display();
-  door.display();
-  
-  if(button.triggered) door.open();
-  else door.close();
-  
-  door.update();
+  for (int i = 0; i < Players.size(); i++) {
+    _p1.update(Players.get(i));
+    _p1.display();
+    _p2.update(Players.get(i));
+    _p2.display();
+    Players.get(i).display();
+    Players.get(i).move();
+  }
 }
 
 
 void keyPressed() {
   for (int i = 0; i < Players.size(); i++) {
-    Players.get(i).setMove((char)keyCode, true);
+    Players.get(i).setMove((char)keyCode, key, true);
   }
 }
 void keyReleased() {
   for (int i = 0; i < Players.size(); i++) {
-    Players.get(i).setMove((char)keyCode, false);
+    Players.get(i).setMove((char)keyCode, key, false);
   }
-}
-
-void keyPressed(){
-  if(key == 'k') button.on();
-  else button.off();
 }
