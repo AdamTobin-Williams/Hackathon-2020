@@ -1,11 +1,11 @@
 class Lever extends Trigger {
 
-  public Lever(int x, int y, int w, int h) {
-    super(x, y, w, h);
+  public Lever(float x, float y, float w, float h, color c) {
+    super(x, y, w, h, c);
   }
 
   public void update(Player p) {
-    if (super.collides(p)) toggle();
+    if (super.collide(p)) toggle();
   }
   
   public void toggle(){

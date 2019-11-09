@@ -1,11 +1,11 @@
 class Button extends Trigger {
 
-  public Button(int x, int y, int w, int h) {
-    super(x, y, w, h);
+  public Button(float x, float y, float w, float h, color c) {
+    super(x, y, w, h, c);
   }
 
   public void update(Player p) {
-    if (super.collides(p)) on();
+    if (super.collide(p)) on();
     else off();
   }
   
