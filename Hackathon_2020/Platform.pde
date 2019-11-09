@@ -22,7 +22,7 @@ class Platform extends CollidableObject {
     this.y=y+u;
     this.h=h+u;
   }
-  
+
   public void update(Player p) {
     if (super.collide(p)) {
       if (p.x+Player.w/2+p.xs >x && p.y>y && p.y-Player.h<x+w && p.x+Player.w/2<x+p.xs) {

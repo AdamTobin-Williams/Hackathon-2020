@@ -3,9 +3,11 @@ class Player {
   public float xs, ys;
   public static final float w = 20; // change
   public static final float h = 40; // change
+  public final String name;
   public final char keyU, keyL, keyD, keyR;
 
-  public Player (char keyU, char keyL, char keyD, char keyR) {
+  public Player (String name, char keyU, char keyL, char keyD, char keyR) {
+    this.name = name;
     this.keyU = keyU;
     this.keyL = keyL;
     this.keyD = keyD;
@@ -19,5 +21,9 @@ class Player {
 
   public void kill() {
     // reset player's X and Y pos in level. Also set xs and ys to 0.
+  }
+
+  public void display() {
+    // to be implemented
   }
 }
