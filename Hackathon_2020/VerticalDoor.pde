@@ -4,8 +4,8 @@ class VerticalDoor extends Platform {
   int speed;
   boolean open;
 
-  public VerticalDoor(float x, float y0, float yF, float h, int speed) {
-    super(x, y0, 20, h);
+  public VerticalDoor(float x, float y0, float yF, float h, color c, int speed) {
+    super(x, y0, 20, h,c);
     this.yF = yF;
     this.speed = speed;
     open = false;

@@ -1,18 +1,15 @@
-class Platform {
+class Platform extends CollidableObject {
 
-  float x;
-  float y;
-  float w;
-  float h;
-
-  public Platform(float x, float y, float w, float h) {
+  public Platform(float x, float y, float w, float h, color c) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
+    this.c = c;
   }
 
   public void display() {
+    fill(c);
     rect(x, y, w, h);
   }
 
@@ -26,14 +23,25 @@ class Platform {
     this.h=h+u;
   }
 
-  //public void collide(Player p) {
-  //  if (p.x+5 >x && p.y<y && p.y+40>y2 && p.x-5<x2){
-  //    if (p is on left) {
-  //      p.x = x-p.w/2;
-  //    } else if (3 other cases
-  //  }else{
-  //    return false;
-  //  }
+  public void update(Player p) {
+    if (super.collide(p)) {
+      if (p.x+Player.w/2+p.xs >x && p.y>y && p.y-Player.h<x+w && p.x+Player.w/2<x+p.xs) {
 
-  //}
+        p.x = x-Player.w/2;
+        p.xs = 0;
+      } else if (p.x-Player.w/2+p.xs <x+w && p.y>y && p.y-Player.h<x+w && p.x-Player.w/2<x+p.xs) {
+
+        p.x = x+w+Player.w/2;
+        p.xs = 0;
+      } else if (p.x+Player.w/2 >x && p.y+p.ys>y && p.y<y+p.ys && p.x-Player.w/2<x+w) {
+
+        p.y = y;
+        p.ys = 0;
+      } else if (p.x+Player.w/2 >x && p.y-Player.h+p.ys<y+h && p.y-Player.h<y+p.ys && p.x-Player.w/2<x+w) {
+
+        p.y = y+h+Player.h;
+        p.ys = 0;
+      }
+    }
+  }
 }
