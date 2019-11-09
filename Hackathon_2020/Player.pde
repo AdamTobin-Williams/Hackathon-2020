@@ -20,4 +20,8 @@ class Player {
   public void kill() {
     // reset player's X and Y pos in level. Also set xs and ys to 0.
   }
+  
+  public void display() {
+    // to be implemented
+  }
 }
