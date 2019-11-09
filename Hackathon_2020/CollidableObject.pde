@@ -14,4 +14,9 @@ abstract class CollidableObject {
       return false;
     }
   }
+  
+  public void display(){
+    fill(c);
+    rect(x,y,w,h);
+  }
 }
