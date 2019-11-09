@@ -7,6 +7,9 @@ class Player {
   public final char keyU, keyL, keyD, keyR;
   public boolean onGround;
   public boolean isLeft, isRight, isUp, isDown;
+  public static final float airFrict = 0.99;
+  public static final float groundFrict = 0.95;
+  public static final float speed = 0.75;
 
   public Player (String name, char keyU, char keyL, char keyD, char keyR) {
     this.name = name;
@@ -14,11 +17,31 @@ class Player {
     this.keyL = keyL;
     this.keyD = keyD;
     this.keyR = keyR;
+    
   }
 
   public void move() {
+    
+    if(isUp&&onGround){
+      ys=-5;
+    }
+    if(isRight){
+      xs+=speed;
+    }
+    if(isLeft){
+      xs-=speed;
+    }
+    
     x+=xs;
     y+=ys;
+    
+    
+    if(onGround){
+      xs*=groundFrict;
+    }else{
+      xs*=airFrict;
+      ys+=gravity;
+    }
     onGround = false;
   }
 
@@ -28,20 +51,19 @@ class Player {
 
   public void display() {
     fill(255); //placeholder
-    rect(x, y, 20, 40);
+    rect(x-w/2, y, w, -h);
   }
 
-  boolean setMove(char k, boolean b) {
-    if (k == keyU) {
+  boolean setMove(char kc, char k, boolean b) {
+    if (kc == keyU || k == keyU) {
       return isUp = b;
-    } else if(k==keyD){
-      return isDown = b;
-    } else if (k==keyL){
+    } 
+    if (kc == keyL || k==keyL){
       return isLeft = b;
-    } else if (k==keyR){
+    } 
+    if (kc == keyR ||k==keyR){
       return isRight = b;
-    } else {
-      return b;
-    }
+    } 
+     return b;
   }
 }
