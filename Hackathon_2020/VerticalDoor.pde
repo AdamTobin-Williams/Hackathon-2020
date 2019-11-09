@@ -15,6 +15,13 @@ class VerticalDoor extends Door {
         else if (super.y > F) super.y -= speed;
       }
     }
+    else {
+      if(super.y >= yS-speed && super.y <= yS+speed) y = yS;
+      else{
+        if(super.y < yS) super.y += speed;
+        else if(super.y > yS) super.y -= speed;
+      }
+    }
   }
 
   public void open() {
