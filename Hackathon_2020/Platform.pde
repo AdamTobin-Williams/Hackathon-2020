@@ -26,14 +26,13 @@ class Platform{
     this.h=h+u;
   }
   
-  //public void collide(Player p) {
-  //  if (p.x+5 >x && p.y<y && p.y+40>y2 && p.x-5<x2){
-  //    if (p is on left) {
-  //      p.x = x-p.w/2;
-  //    } else if (3 other cases
-  //  }else{
-  //    return false;
-  //  }
+  public void collide(Player p) {
+    if (p.x+Player.w/2+xs >x && p.y>y && p.y-Player.h<y2 && p.x+Player.w/2<x+p.xs){
+      if () {
+        p.x = x-Player.w/2;
+      } else if (){
+    }else{
+    }
     
-  //}
+  }
 }
