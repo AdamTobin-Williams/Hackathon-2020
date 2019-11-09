@@ -27,9 +27,9 @@ class Player {
   }
 
   public void display() {
-    // to be implemented
+    fill(255); //placeholder
+    rect(x, y, 20, 40);
   }
-
 
   boolean setMove(char k, boolean b) {
     if (k == keyU) {
