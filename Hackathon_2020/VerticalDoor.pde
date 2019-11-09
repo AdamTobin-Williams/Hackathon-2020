@@ -1,10 +1,10 @@
-class VertDoor extends Platform {
+class VerticalDoor extends Platform {
   
   float yF;
   int speed;
   boolean open;
  
-  public VertDoor(float x, float y0, float yF, float h, int speed){
+  public VerticalDoor(float x, float y0, float yF, float h, int speed){
     super(x,y0,20,h);
     this.yF = yF;
     this.speed = speed;

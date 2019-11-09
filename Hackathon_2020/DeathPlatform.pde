@@ -4,10 +4,10 @@ class DeathPlatform extends Platform{
     super(x,y,w,h);
   }
   
-  //public void collide(Player p) {
-  //  if (super.collide(p)) {
-  //    p.kill();
-  //  }
-  //}
+  public void collide(Player p) {
+    if (super.collide(p)) {
+      p.kill();
+    }
+  }
   
 }
