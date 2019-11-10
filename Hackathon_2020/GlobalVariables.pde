@@ -1,4 +1,4 @@
-final ArrayList<Player> Players = new ArrayList<Player>();
+//final ArrayList<Player> Players = new ArrayList<Player>();
 final ArrayList<Level> Levels = new ArrayList<Level>();
 
 final float gravity = .2; // subject to change

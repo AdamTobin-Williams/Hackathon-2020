@@ -20,28 +20,33 @@ class Player {
   }
 
   public void move() {
-
-    if (isUp&&onGround) {
-      ys=-5;
+    if(x <= 20) x = 20;
+    else if (x >= width-20) x = width-20;
+    else if (y <= 40) y = 40;
+    else if (y >= height) y = height;
+    else {
+      if (isUp&&onGround) {
+        ys=-5;
+      }
+      if (isRight) {
+        xs+=speed;
+      }
+      if (isLeft) {
+        xs-=speed;
+      }
+  
+      x+=xs;
+      y+=ys;
+  
+  
+      if (onGround) {
+        xs*=groundFrict;
+      } else {
+        xs*=airFrict;
+        ys+=gravity;
+      }
+      onGround = false;
     }
-    if (isRight) {
-      xs+=speed;
-    }
-    if (isLeft) {
-      xs-=speed;
-    }
-
-    x+=xs;
-    y+=ys;
-
-
-    if (onGround) {
-      xs*=groundFrict;
-    } else {
-      xs*=airFrict;
-      ys+=gravity;
-    }
-    onGround = false;
   }
 
   public void display() {
