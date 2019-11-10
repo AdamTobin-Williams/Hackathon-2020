@@ -61,21 +61,23 @@ void setup() {
   Players.get(1).y = 500;
   Players.get(0).x = 400;
   Players.get(1).x = 500;
-  //img = loadImage("Tobias&Charlie.jpg");
+  
+  img = loadImage("Tobias&Charlie.jpg");
 }
 
 void draw() {
- if(currentLevel == TITLE) displayTitle();
- else if(currentLevel == LEVEL1) Levels.get(1).display();
- else if(currentLevel == LEVEL4) Levels.get(4).display();
+   if(currentLevel == TITLE) displayTitle();
+   else if(currentLevel == LEVEL1) Levels.get(1).display();
+   else if(currentLevel == LEVEL4) Levels.get(4).display();
+}
+
 }
 
 void keyPressed() {
   if (key == 'r') {
     try {
       Levels.get(currentLevel).killPlayers();
-    }
-    catch (ArrayIndexOutOfBoundsException e) {
+    } catch (IndexOutOfBoundsException e) {
       for (int i = 0; i < Players.size(); i++) {
         Players.get(i).x = width/2;
         Players.get(i).y = width/2;

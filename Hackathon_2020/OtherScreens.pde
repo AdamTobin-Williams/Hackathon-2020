@@ -57,35 +57,34 @@ void displayTitle() {
 //Title = -2
 void displayControls() {
   background(0);
-  image(img, 262.5, 13,675,761);
-  fill(255);
-  rectMode(CENTER);
-  rect(width/2, height/2, 300, 100);
+  image(img, 0, -30, 1200, 830);
   
-
+  
   rectMode(CORNER);
 }
 
 //Title = -3
 void displayBackstory() {
   background(0);
-  image(img, 262.5, 13,675,761);
-  fill(255);
-  rectMode(CENTER);
-  rect(width/2, height/2, 300, 100);
-  
-
+  image(img, 0, -30, 1200, 830);
+  fill(0);
+  textSize(20);
+  text("Two children saw the alleyway and scurried for it on a run; anxious toward depletion and frantic in their big flashing eyes. Furious calls shot at them in the cold. The cobble beneath was wet. The air smelt heavily of fresh soil. \n     And the story begins with a trip and a stumble. The cobble street slams in over the children, following screams of confusion and panic. The darkness washed over their sight under the rain, and all that accompanied the two was the muffled patter on the surface, and the deliberate fading of footsteps that had then walked off into the silence.",width/2-550, height/2-250, 350, 620);
+  text("The girl took her brother’s hand to ensure whether he was still there after his breath fell quiet. The lights flicker on and the sound of white noise turned them suddenly from the brick wall they happened to be facing to a dimly lit corridor. \n\n     A distorted croak voiced from above, Welcome to your first trial, Tobias and Charlie.",width/2+200, height/2-250, 350, 700);
   rectMode(CORNER);
 }
 
 //Title = -4
 void displayCredits() {
   background(0);
-  image(img, 262.5, 13,675,761);
-  fill(255);
-  rectMode(CENTER);
-  rect(width/2, height/2, 300, 100);
+  image(img, 0, -30, 1200, 830);
+  fill(0);
+  textSize(30);
+  text("Lead Programmers: \nAudrey Chan\nMikk Sanborn\nAdam Tobin-Williams\n\nLead Designer: \nSierra Spain\n\nHosted by:\nTeam 2485\n\nSponsored by:\nQualcomm",width/2-550, height/2-300, 350, 620);
+  text("",width/2+200, height/2-250, 350, 700);
+  background(0);
+  image(img, 0, -30, 1200, 830);
   
-
+  
   rectMode(CORNER);
 }
