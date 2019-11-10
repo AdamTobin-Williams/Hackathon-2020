@@ -21,20 +21,59 @@ void setup() {
 }
 
 void draw() {
- background(0);
-  image(img, 0, -30,1200,830);
-  fill(180);
-  rectMode(CENTER);
-  if(mouseX>width/2-400 && mouseX<width/2-100 && mouseY >height/2-200 && mouseY <height/2-100){
-    fill(160);
+  background(0);
+  image(img, 0, -30, 1200, 830);
+  rectMode(CORNER);
+
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-150 && mouseY <height/2-150 +50) {
+    fill(80);
   }
-  rect(width/2-400, height/2-200, 300, 100);
-  rect(width/2-400, height/2-50, 300, 100);
-  rect(width/2-400, height/2+100, 300, 100);
-  rect(width/2-400, height/2+250, 300, 100);
-  
+  rect(width/2-500, height/2-150, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-150 && mouseY <height/2-150 +50&& mousePressed) {
+    currentLevel=0;
+  }
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-50 && mouseY <height/2-50 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2-50, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-50 && mouseY <height/2-50 +50&& mousePressed) {
+    currentLevel=-2;
+  }
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+50 && mouseY <height/2+50 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2+50, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+50 && mouseY <height/2+50 +50&& mousePressed) {
+    currentLevel=-3;
+  }
+
+  fill(0);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+150 && mouseY <height/2+150 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2+150, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+150 && mouseY <height/2+150 +50&& mousePressed) {
+    currentLevel=-4;
+  }
 
   rectMode(CORNER);
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Play", width/2-500, height/2-150, 250, 50);
+  text("Controls", width/2-500, height/2-50, 250, 50);
+  text("Backstory", width/2-500, height/2+50, 250, 50);
+  text("Credits", width/2-500, height/2+150, 250, 50);
 }
 
 void keyPressed() {
