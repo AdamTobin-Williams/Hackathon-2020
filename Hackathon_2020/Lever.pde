@@ -11,8 +11,8 @@ class Lever extends Trigger {
   public void update(Player p) {
     if (super.collide(p)) toggle();
   }
-  
-  public void toggle(){
+
+  public void toggle() {
     triggered = !triggered;
   }
 }

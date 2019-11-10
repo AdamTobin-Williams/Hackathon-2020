@@ -16,6 +16,7 @@ Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
 HorizontalDoor level4Door1 = new HorizontalDoor(975, 150, 800, 175, #368986, 3);
 VerticalDoor level4Door2 = new VerticalDoor(275, 210, 60, 90, #368986, 3);
 HorizontalDoor level4Door3 = new HorizontalDoor(350, 525, 200, 100, #368986, 3);
+PImage img;
 
 void setup() {
   size(1200, 800);
@@ -48,24 +49,41 @@ void setup() {
   Players.get(1).y = 500;
   Players.get(0).x = 400;
   Players.get(1).x = 500;
+  img = loadImage("Tobias&Charlie.jpg");
 }
 
 void draw() {
-  background(0);
-  //for (int i = 0; i < Players.size(); i++) {
-  //  _p1.update(Players.get(i));
-  //  _p1.display();
-  //  _p2.update(Players.get(i));
-  //  _p2.display();
-  //  Players.get(i).display();
-  //  Players.get(i).move();
-  //}
+ background(0);
+  image(img, 0, -30,1200,830);
+  fill(180);
+  rectMode(CENTER);
+  if(mouseX>width/2-400 && mouseX<width/2-100 && mouseY >height/2-200 && mouseY <height/2-100){
+    fill(160);
+  }
+  rect(width/2-400, height/2-200, 300, 100);
+  rect(width/2-400, height/2-50, 300, 100);
+  rect(width/2-400, height/2+100, 300, 100);
+  rect(width/2-400, height/2+250, 300, 100);
+  
 
-  Levels.get(1).display();
+  rectMode(CORNER);
 }
 
-
 void keyPressed() {
+  if (key == 'r') {
+    try {
+      Levels.get(currentLevel).killPlayers();
+    }
+    catch (ArrayIndexOutOfBoundsException e) {
+      for (int i = 0; i < Players.size(); i++) {
+        Players.get(i).x = width/2;
+        Players.get(i).y = width/2;
+
+        Players.get(i).xs = 0;
+        Players.get(i).ys = 0;
+      }
+    }
+  }
   for (int i = 0; i < Players.size(); i++) {
     Players.get(i).setMove((char)keyCode, key, true);
   }
