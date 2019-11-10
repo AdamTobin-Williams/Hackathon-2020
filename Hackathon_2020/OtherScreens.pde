@@ -114,7 +114,7 @@ void displayCredits() {
   fill(0);
   textSize(30);
   textAlign(CENTER,CENTER);
-  text("Credits:\nLead Programmers: \nAudrey Chan\nMikk Sanborn\nAdam Tobin-Williams\n\nLead Designer: \nSierra Spain\n\nHosted by:\nTeam 2485\n\nSponsored by:\nQualcomm", width/2-550, height/2-300, 350, 650);
+  text("Credits:\nLead Programmers: \nAudrey Chan\nMikk Sanborn\nAdam Tobin-Williams\n\nLead Designer: \nSierra Spain\n\nHosted by:\nTeam 2485\n\nSponsored by:\nQualcomm", width/2-550, height/2-300, 350, 620);
   text("", width/2+200, height/2-250, 350, 700);
 
   fill(0);

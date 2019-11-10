@@ -8,7 +8,7 @@ class VerticalDoor extends Door {
   }
 
   public void update(Player p) {
-    super.update(Player p);
+    super.update(p);
     if (open) {
       if (super.y >= F-speed && super.y <= F+speed) y = F;
       else {

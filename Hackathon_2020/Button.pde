@@ -10,7 +10,7 @@ class Button extends Trigger {
 
   public void update(Player p) {
     if (super.collide(p)) on();
-    else off();
+    // else ;
   }
 
   public void on() {
@@ -22,4 +22,12 @@ class Button extends Trigger {
     triggered = false;
     ConnectedDoors.get(0).close();
   }
+  
+  public void display() {
+    off();
+    fill(c);
+    noStroke();
+    rect(x, y, w, h);
+  }
+  
 }

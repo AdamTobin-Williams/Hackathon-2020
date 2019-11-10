@@ -116,7 +116,13 @@ void keyPressed() {
   }
   
   if(key == 'y') {currentLevel ++;}
-  if(key == 'c') level4Door1.open()/* = true*/;
+  if(key == 'c'){
+    if (level4Door1.x >= level4Door1.F-level4Door1.speed && level4Door1.x <= level4Door1.F+level4Door1.speed) level4Door1.x = level4Door1.F;
+     else {
+     if (level4Door1.x < level4Door1.F) level4Door1.x += level4Door1.speed;
+     else if (level4Door1.x > level4Door1.F) level4Door1.x -= level4Door1.speed;
+     }
+  }
 }
 void keyReleased() {
   for (int i = 0; i < Players.size(); i++) {
