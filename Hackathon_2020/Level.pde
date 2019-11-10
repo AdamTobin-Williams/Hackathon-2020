@@ -22,6 +22,12 @@ class Level {
   public void display() {
     for (int i = 0; i < CollidableObjects.size(); i++) {
       CollidableObjects.get(i).display();
+      //for (int j = 0; j < Players.size(); j++) {
+      //  CollidableObjects.get(i).update(Players.get(j));
+      //  Players.get(j).display();
+      //  Players.get(j).move();
+      //}
     }
+    
   }
 }
