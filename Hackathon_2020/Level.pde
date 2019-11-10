@@ -50,18 +50,22 @@ class Level {
     background(backgroundColor);
     for (int i = 0; i < CollidableObjects.size(); i++) {
       CollidableObjects.get(i).display();
-      //for (int j = 0; j < Players.size(); j++) {
-      //  CollidableObjects.get(i).update(Players.get(j));
-      //  Players.get(j).display();
-      //  Players.get(j).move();
-      //}
+      for (int j = 0; j < Players.size(); j++) {
+        CollidableObjects.get(i).update(Players.get(j));
+      }
     }
-    
+
+    for (int i = 0; i < Players.size(); i++) {
+      Players.get(i).display();
+      Players.get(i).move();
+    }
   }
 
   public void killPlayers() {
     Players.get(0).x = startX;
-    Players.get(1).x = startY;
+    Players.get(0).y = startY;
+    Players.get(1).x = startX;
+    Players.get(1).y = startY;
     //if (startX.length == 1) {
     //  println("l1");
     //  for (int i = 0; i < Players.size(); i++) {
@@ -82,6 +86,5 @@ class Level {
     //    Players.get(i).ys = 0;
     //  }
     //}
-
   }
 }

@@ -1,7 +1,7 @@
 final ArrayList<Player> Players = new ArrayList<Player>();
 
 /*
-Format:
+Format (most common constructor uses, there are others):
 Platform(float x, float y, float w, float h, color c)
 Door(float x, float y, float F, float h, color c, int speed)
 Trigger(float x, float y, float w, float h, color c, Door... ConncectedDoors)
@@ -78,6 +78,7 @@ void draw() {
    else if(currentLevel == LEVEL3) Levels.get(3).display();
    else if(currentLevel == LEVEL4) Levels.get(4).display();
 }
+
 
 
 void keyPressed() {
