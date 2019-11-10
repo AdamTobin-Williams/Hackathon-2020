@@ -19,7 +19,7 @@ class Player {
   public void move() {
     if (onGround) {
       if (isUp) {
-        ys=-10;
+        ys=-8;
       }
     } else {
       if (isRight) {
