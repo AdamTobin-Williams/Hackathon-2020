@@ -19,4 +19,6 @@ abstract class CollidableObject {
     noStroke();
     rect(x, y, w, h);
   }
+  
+  public abstract void update(Player p);
 }
