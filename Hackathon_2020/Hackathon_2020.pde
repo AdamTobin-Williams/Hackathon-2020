@@ -18,17 +18,6 @@ Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
 
 PImage img;
 
-final int TITLE = -1;
-final int CONTROLS = -2;
-final int BACKSTORY = -3;
-final int CREDITS = -4;
-
-final int LEVEL0  = 0;
-final int LEVEL1  = 1;
-final int LEVEL2  = 2;
-final int LEVEL3  = 3;
-final int LEVEL4 = 4;
-int gameState = TITLE;
 
 void setup() {
   size(1200, 800);
@@ -76,9 +65,9 @@ void setup() {
 }
 
 void draw() {
- if(gameState == TITLE) displayTitle();
- else if(gameState == LEVEL1) Levels.get(1).display();
- else if(gameState == LEVEL4) Levels.get(4).display();
+ if(currentLevel == TITLE) displayTitle();
+ else if(currentLevel == LEVEL1) Levels.get(1).display();
+ else if(currentLevel == LEVEL4) Levels.get(4).display();
 }
 
 void keyPressed() {
@@ -112,7 +101,7 @@ void keyPressed() {
     Players.get(1).move();
   }
   
-  if(key == 'y') {gameState ++;}
+  if(key == 'y') {currentLevel ++;}
 }
 void keyReleased() {
   for (int i = 0; i < Players.size(); i++) {
