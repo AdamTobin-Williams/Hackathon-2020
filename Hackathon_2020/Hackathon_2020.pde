@@ -21,7 +21,30 @@ void setup() {
   img = loadImage("Tobias&Charlie.jpg");
 }
 
-void draw() {
+void draw() {background(0);
+  image(img, 0, -30, 1200, 830);
+  fill(0);
+  textSize(30);
+  textAlign(LEFT);
+  
+  text("Controls:\nPlayer One:\nJump: W\nLeft: A\nRight: D\n\nPlayer Two:\nJump: Up Arrow\nLeft: Left Arrow\nRight: Right Arrow", width/2-550, height/2-200, 350, 620);
+  text("", width/2+200, height/2-250, 350, 700);
+
+
+  fill(0);
+  if (mouseX>1100 && mouseX<1100 +100 && mouseY >0 && mouseY <0 +50) {
+    fill(80);
+  }
+  rect(1090, 10, 100, 50, 10);
+  if (mouseX>1100 && mouseX<1100 +100 && mouseY >0 && mouseY <0 +50 && mousePressed) {
+    currentLevel=-1;
+  }
+  fill(255);
+  textSize(30);
+  textAlign(CENTER,CENTER);
+  text("Back", 1090, 10, 100, 50);
+  
+  rectMode(CORNER);
 }
 
 void keyPressed() {
