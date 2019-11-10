@@ -17,14 +17,6 @@ class Player {
   }
 
   public void move() {
-    println("moving");
-    /*
-    if (x <= 20) x = 20;
-     else if (x >= width-20) x = width-20;
-     else if (y <= 40) y = 40;
-     else if (y >= height) y = height;
-     */
-
     if (onGround) {
       if (isUp) {
         ys=-10;
@@ -47,23 +39,26 @@ class Player {
       xs*=airFrict;
       ys+=gravity;
     }
+    
+    onGround=false;
   }
-}
 
-public void display() {
-  fill(255); //placeholder
-  rect(x-w/2, y, w, -h);
-}
 
-boolean setMove(char kc, char k, boolean b) {
-  if (kc == keyU || k == keyU) {
-    return isUp = b;
-  } 
-  if (kc == keyL || k==keyL) {
-    return isLeft = b;
-  } 
-  if (kc == keyR ||k==keyR) {
-    return isRight = b;
-  } 
-  return b;
+  public void display() {
+    fill(255); //placeholder
+    rect(x-w/2, y, w, -h);
+  }
+
+  boolean setMove(char kc, char k, boolean b) {
+    if (kc == keyU || k == keyU) {
+      return isUp = b;
+    } 
+    if (kc == keyL || k==keyL) {
+      return isLeft = b;
+    } 
+    if (kc == keyR ||k==keyR) {
+      return isRight = b;
+    } 
+    return b;
+  }
 }

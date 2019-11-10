@@ -11,7 +11,7 @@ void displayTitle() {
   }
   rect(width/2-500, height/2-150, 250, 50, 10);
   if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-150 && mouseY <height/2-150 +50&& mousePressed) {
-    currentLevel=0;
+    currentLevel=4;
   }
 
   fill(0);

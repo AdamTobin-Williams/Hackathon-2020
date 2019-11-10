@@ -19,6 +19,11 @@ Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
 PImage img;
 
 
+  HorizontalDoor level4Door1 = new HorizontalDoor(975, 150, 800, 175, #368986, 3);
+  VerticalDoor level4Door2 = new VerticalDoor(325, 210, 60, 90, #368986, 3);
+  HorizontalDoor level4Door3 = new HorizontalDoor(350, 525, 200, 100, #368986, 3);
+
+
 void setup() {
   size(1200, 800);
 
@@ -36,9 +41,6 @@ void setup() {
   Levels.add(new Level(level3, 0, 0, 0));
   
   
-  HorizontalDoor level4Door1 = new HorizontalDoor(975, 150, 800, 175, #368986, 3);
-  VerticalDoor level4Door2 = new VerticalDoor(325, 210, 60, 90, #368986, 3);
-  HorizontalDoor level4Door3 = new HorizontalDoor(350, 525, 200, 100, #368986, 3);
   
   Levels.add(new Level(level4, 100, 100, 0));
   level4.add(new Platform(0, 150, 975, 50, 255));
@@ -77,6 +79,8 @@ void draw() {
    else if(currentLevel == LEVEL2) Levels.get(2).display();
    else if(currentLevel == LEVEL3) Levels.get(3).display();
    else if(currentLevel == LEVEL4) Levels.get(4).display();
+   
+   level4Door1.update();
 }
 
 
@@ -112,6 +116,7 @@ void keyPressed() {
   }
   
   if(key == 'y') {currentLevel ++;}
+  if(key == 'c') level4Door1.open = true;
 }
 void keyReleased() {
   for (int i = 0; i < Players.size(); i++) {

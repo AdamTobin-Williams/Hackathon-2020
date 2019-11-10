@@ -11,16 +11,15 @@ class Button extends Trigger {
   public void update(Player p) {
     if (super.collide(p)) on();
     else off();
-    
-    if(triggered) door.open();
-    else door.close();
   }
 
   public void on() {
     triggered = true;
+    ConnectedDoors.get(0).open();
   }
 
   public void off() {
     triggered = false;
+    ConnectedDoors.get(0).close();
   }
 }
