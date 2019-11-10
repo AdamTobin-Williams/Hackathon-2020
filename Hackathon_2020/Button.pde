@@ -23,12 +23,4 @@ class Button extends Trigger {
     triggered = false;
     ConnectedDoors.get(0).close();
   }
-  
-  public void display() {
-    // off();
-    fill(c);
-    noStroke();
-    rect(x, y, w, h);
-  }
-  
 }
