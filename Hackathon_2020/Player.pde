@@ -17,36 +17,31 @@ class Player {
     this.keyL = keyL;
     this.keyD = keyD;
     this.keyR = keyR;
-    
   }
 
   public void move() {
-    
-    if(isUp&&onGround){
+
+    if (isUp&&onGround) {
       ys=-5;
     }
-    if(isRight){
+    if (isRight) {
       xs+=speed;
     }
-    if(isLeft){
+    if (isLeft) {
       xs-=speed;
     }
-    
+
     x+=xs;
     y+=ys;
-    
-    
-    if(onGround){
+
+
+    if (onGround) {
       xs*=groundFrict;
-    }else{
+    } else {
       xs*=airFrict;
       ys+=gravity;
     }
     onGround = false;
-  }
-
-  public void kill() {
-    // reset player's X and Y pos in level. Also set xs and ys to 0.
   }
 
   public void display() {
@@ -58,12 +53,12 @@ class Player {
     if (kc == keyU || k == keyU) {
       return isUp = b;
     } 
-    if (kc == keyL || k==keyL){
+    if (kc == keyL || k==keyL) {
       return isLeft = b;
     } 
-    if (kc == keyR ||k==keyR){
+    if (kc == keyR ||k==keyR) {
       return isRight = b;
     } 
-     return b;
+    return b;
   }
 }

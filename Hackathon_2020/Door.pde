@@ -14,7 +14,7 @@ abstract class Door extends Platform {
     this.speed = speed;
     open = false;
   }
-  
+
   public abstract void update();
 
   public void open() {
