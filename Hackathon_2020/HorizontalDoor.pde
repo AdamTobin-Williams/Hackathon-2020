@@ -7,7 +7,8 @@ class HorizontalDoor extends Door {
     //open = false;
   }
 
-  public void update() {
+  public void update(Player p) {
+    super.update(Player p);
     if (open) {
       if (super.x >= F-speed && super.x <= F+speed) x = F;
       else {

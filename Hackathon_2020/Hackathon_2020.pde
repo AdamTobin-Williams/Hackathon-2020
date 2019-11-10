@@ -80,7 +80,7 @@ void draw() {
    else if(currentLevel == LEVEL3) Levels.get(3).display();
    else if(currentLevel == LEVEL4) Levels.get(4).display();
    
-   level4Door1.update();
+
 }
 
 
@@ -116,7 +116,7 @@ void keyPressed() {
   }
   
   if(key == 'y') {currentLevel ++;}
-  if(key == 'c') level4Door1.open = true;
+  if(key == 'c') level4Door1.open()/* = true*/;
 }
 void keyReleased() {
   for (int i = 0; i < Players.size(); i++) {

@@ -15,7 +15,7 @@ abstract class Door extends Platform {
     open = false;
   }
 
-  public abstract void update();
+  public abstract void update(Player p);
 
   public void open() {
     open = true;
