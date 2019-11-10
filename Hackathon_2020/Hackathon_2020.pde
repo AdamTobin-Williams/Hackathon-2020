@@ -5,7 +5,8 @@ ArrayList<CollidableObject> level1 = new ArrayList<CollidableObject>();
 
 Platform _p1 = new Platform(100, 600, 600, 100, color(250, 120, 0));
 Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
-Platform _p3 = new Platform(300, 400, 100, 200, color(37, 217, 231));
+
+PImage img;
 
 void setup() {
   size(1200, 800);
@@ -17,25 +18,64 @@ void setup() {
   Players.get(1).y = 500;
   Players.get(0).x = 400;
   Players.get(1).x = 500;
-  
-  img = loadImage("Tobias&Charlie.jpg");
 
+  img = loadImage("Tobias&Charlie.jpg");
 }
 
 void draw() {
   background(0);
-  for (int i = 0; i < Players.size(); i++) {
-    _p1.update(Players.get(i));
-    _p1.display();
-    _p2.update(Players.get(i));
-    _p2.display();
-    _p3.update(Players.get(i));
-    _p3.display();
-    Players.get(i).move();
+  image(img, 0, -30, 1200, 830);
+  rectMode(CORNER);
+
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-150 && mouseY <height/2-150 +50) {
+    fill(80);
   }
-  for (int i = 0; i < Players.size(); i++) {
-    Players.get(i).display();
+  rect(width/2-500, height/2-150, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-150 && mouseY <height/2-150 +50&& mousePressed) {
+    currentLevel=0;
   }
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-50 && mouseY <height/2-50 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2-50, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2-50 && mouseY <height/2-50 +50&& mousePressed) {
+    currentLevel=-2;
+  }
+
+  fill(0);
+
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+50 && mouseY <height/2+50 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2+50, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+50 && mouseY <height/2+50 +50&& mousePressed) {
+    currentLevel=-3;
+  }
+
+  fill(0);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+150 && mouseY <height/2+150 +50) {
+    fill(80);
+  }
+  rect(width/2-500, height/2+150, 250, 50, 10);
+  if (mouseX>width/2-500 && mouseX<width/2-500 +250 && mouseY >height/2+150 && mouseY <height/2+150 +50&& mousePressed) {
+    currentLevel=-4;
+  }
+
+  rectMode(CORNER);
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Play", width/2-500, height/2-150, 250, 50);
+  text("Controls", width/2-500, height/2-50, 250, 50);
+  text("Backstory", width/2-500, height/2+50, 250, 50);
+  text("Credits", width/2-500, height/2+150, 250, 50);
 }
 
 void keyPressed() {
