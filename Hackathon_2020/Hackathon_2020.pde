@@ -43,6 +43,7 @@ void setup() {
   
   
   Levels.add(new Level(level4, 100, 100, 0));
+  level4.add(new Platform(150, 90, 50, 59, color(235, 180, 80)));
   level4.add(new Platform(0, 150, 975, 50, 255));
   level4.add(new Platform(300, 300, 850, 50, 255));
   level4.add(new Platform(125, 375, 100, 50, 255));
@@ -54,10 +55,10 @@ void setup() {
   level4.add(level4Door1);
   level4.add(level4Door2);
   level4.add(level4Door3);
-  level4.add(new Button(225, 140, 30, 10, #F77FF0, level4Door1));
-  level4.add(new Button(905, 290, 30, 10, #F77FF0, level4Door1));
+  level4.add(new Button(225, 140, 30, 11, #F77FF0, level4Door1));
+  level4.add(new Button(905, 290, 30, 11, #F77FF0, level4Door1));
   level4.add(new Lever(420, 270, 10, 30, #F77FF0, level4Door2));
-  level4.add(new Button(185, 515, 30, 10, #F77FF0, level4Door3));
+  level4.add(new Button(185, 515, 30, 11, #F77FF0, level4Door3));
   level4.add(new Button(610, 515, 30, 10, #F77FF0, level4Door3));
 
   Players.get(0).y = 400;

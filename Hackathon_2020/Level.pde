@@ -5,7 +5,7 @@ class Level {
   final color backgroundColor;
 
   public Level(ArrayList<CollidableObject> CollidableObjects, int startX, int startY, color backgroundColor) {
-    this.CollidableObjects = CollidableObjects; //<>//
+    this.CollidableObjects = CollidableObjects; //<>// //<>//
     this.startX = startX;
     this.startY = startY;
     this.backgroundColor = backgroundColor;
@@ -50,9 +50,11 @@ class Level {
     background(backgroundColor);
     for (int i = 0; i < CollidableObjects.size(); i++) {
       CollidableObjects.get(i).display();
-      for (int j = 0; j < Players.size(); j++) {
-        CollidableObjects.get(i).update(Players.get(j));
-      }
+      CollidableObjects.get(i).update(Players.get(0));
+      CollidableObjects.get(i).update(Players.get(1));
+      //for (int j = 0; j < Players.size(); j++) {
+      //  CollidableObjects.get(i).update(Players.get(j));
+      //}
     }
 
     for (int i = 0; i < Players.size(); i++) {
