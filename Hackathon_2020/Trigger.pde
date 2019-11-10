@@ -1,9 +1,9 @@
-class Trigger extends CollidableObject{
-  
+class Trigger extends CollidableObject {
+
   boolean triggered;
-  
+
   ArrayList<Door> ConnectedDoors;
-  
+
   public Trigger(float x, float y, float w, float h, color c, ArrayList<Door> ConncectedDoors) {
     this.x = x;
     this.y = y;
@@ -13,7 +13,7 @@ class Trigger extends CollidableObject{
     this.ConnectedDoors = ConncectedDoors;
     triggered = false;
   }
-  
+
   public Trigger(float x, float y, float w, float h, color c, Door... ConncectedDoors) {
     this.x = x;
     this.y = y;
@@ -26,8 +26,8 @@ class Trigger extends CollidableObject{
     }
     triggered = false;
   }
-  
-  public void display(){
+
+  public void display() {
     rect(x, y, w, h);
   }
 }

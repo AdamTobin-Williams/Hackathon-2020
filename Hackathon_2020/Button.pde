@@ -8,12 +8,12 @@ class Button extends Trigger {
     if (super.collide(p)) on();
     else off();
   }
-  
-  public void on(){
+
+  public void on() {
     triggered = true;
   }
-  
-  public void off(){
+
+  public void off() {
     triggered = false;
   }
 }

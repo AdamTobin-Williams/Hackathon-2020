@@ -1,3 +1,4 @@
+// start x/y (and multiple)
 
 ArrayList<CollidableObject> level1 = new ArrayList<CollidableObject>();
 
@@ -27,11 +28,23 @@ void draw() {
     Players.get(i).display();
     Players.get(i).move();
   }
-
 }
 
-
 void keyPressed() {
+  if (key == 'r') {
+    try {
+      Levels.get(currentLevel).killPlayers();
+    }
+    catch (ArrayIndexOutOfBoundsException e) {
+      for (int i = 0; i < Players.size(); i++) {
+        Players.get(i).x = width/2;
+        Players.get(i).y = width/2;
+
+        Players.get(i).xs = 0;
+        Players.get(i).ys = 0;
+      }
+    }
+  }
   for (int i = 0; i < Players.size(); i++) {
     Players.get(i).setMove((char)keyCode, key, true);
   }
