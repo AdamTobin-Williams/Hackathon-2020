@@ -10,11 +10,21 @@ class HorizontalDoor extends Door {
   public void update(Player p) {
     super.update(p);
     /*if (open) {
-      if (super.x >= F-speed && super.x <= F+speed) x = F;
-      else {
-        if (super.x < F) super.x += speed;
-        else if (super.x > F) super.x -= speed;
-      }
+     if (super.x >= F-speed && super.x <= F+speed) x = F;
+     else {
+     if (super.x < F) super.x += speed;
+     else if (super.x > F) super.x -= speed;
+     }
+     } else {
+     if (super.x >= xS-speed && super.x <= xS+speed) x = xS;
+     else {
+     if (super.x < xS) super.x += speed;
+     else if (super.x > xS) super.x -= speed;
+     }
+     }*/
+     
+    if (open) {
+      x = F;
     } else {
       if (super.x >= xS-speed && super.x <= xS+speed) x = xS;
       else {
@@ -36,5 +46,11 @@ class HorizontalDoor extends Door {
 
   public void close() {
     open = false;
+  }
+  
+  public void display() {
+    fill(c);
+    noStroke();
+    rect(x, y, w, h);
   }
 }
