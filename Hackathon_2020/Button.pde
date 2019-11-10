@@ -9,7 +9,8 @@ class Button extends Trigger {
   }
 
   public void update(Player p) {
-    if (super.collide(p)) on();
+    if (triggered) { if (!super.collide(p)) off(); } else
+    if (!triggered) { if (super.collide(p)) on(); }
     // else ;
   }
 
@@ -24,7 +25,7 @@ class Button extends Trigger {
   }
   
   public void display() {
-    off();
+    // off();
     fill(c);
     noStroke();
     rect(x, y, w, h);
