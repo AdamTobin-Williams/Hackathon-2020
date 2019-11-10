@@ -48,6 +48,7 @@ class Player {
       ys+=gravity;
     }
   }
+  }
 
   public void display() {
     fill(255); //placeholder

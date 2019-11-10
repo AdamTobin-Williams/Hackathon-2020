@@ -25,18 +25,19 @@ void setup() {
   Players.add(new Player("Tobias", 'w', 'a', 's', 'd'));
   Players.add(new Player("Charlie", (char) UP, (char) LEFT, (char) DOWN, (char) RIGHT));
   
-  Levels.add(new Level(level0, 0, 0, #FF0320));
+  Levels.add(new Level(level0, 0, 0, 0));
   
-  Levels.add(new Level(level1, 0, 0, #FF0320));
+  Levels.add(new Level(level1, 0, 0, 0));
   //Levels.add(new Level(level1, 100, 100-Player.h, 255));
   //level1.add(new Platform(50, height-275, 1000, 75, 255));
   
-  Levels.add(new Level(level2, 0, 0, #FF0320));
+  Levels.add(new Level(level2, 0, 0, 0));
   
-  Levels.add(new Level(level3, 0, 0,#FF0320));
+  Levels.add(new Level(level3, 0, 0, 0));
+  
   
   HorizontalDoor level4Door1 = new HorizontalDoor(975, 150, 800, 175, #368986, 3);
-  VerticalDoor level4Door2 = new VerticalDoor(275, 210, 60, 90, #368986, 3);
+  VerticalDoor level4Door2 = new VerticalDoor(325, 210, 60, 90, #368986, 3);
   HorizontalDoor level4Door3 = new HorizontalDoor(350, 525, 200, 100, #368986, 3);
   
   Levels.add(new Level(level4, 100, 100, 0));
@@ -67,10 +68,18 @@ void setup() {
 
 void draw() {
    if(currentLevel == TITLE) displayTitle();
+   else if(currentLevel == CONTROLS) displayControls();
+   else if(currentLevel == BACKSTORY) displayBackstory();
+   else if(currentLevel == CREDITS) displayCredits();
+   else if(currentLevel == LEVEL0) Levels.get(0).display();
    else if(currentLevel == LEVEL1) Levels.get(1).display();
+   else if(currentLevel == LEVEL1) Levels.get(1).display();
+   else if(currentLevel == LEVEL2) Levels.get(2).display();
+   else if(currentLevel == LEVEL3) Levels.get(3).display();
    else if(currentLevel == LEVEL4) Levels.get(4).display();
-   println(currentLevel);
 }
+
+
 
 void keyPressed() {
   if (key == 'r') {
