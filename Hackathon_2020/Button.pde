@@ -11,6 +11,9 @@ class Button extends Trigger {
   public void update(Player p) {
     if (super.collide(p)) on();
     else off();
+    
+    if(triggered) door.open();
+    else door.close();
   }
 
   public void on() {

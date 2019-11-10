@@ -48,23 +48,22 @@ class Player {
       ys+=gravity;
     }
   }
-  }
+}
 
-  public void display() {
-    fill(255); //placeholder
-    rect(x-w/2, y, w, -h);
-  }
+public void display() {
+  fill(255); //placeholder
+  rect(x-w/2, y, w, -h);
+}
 
-  boolean setMove(char kc, char k, boolean b) {
-    if (kc == keyU || k == keyU) {
-      return isUp = b;
-    } 
-    if (kc == keyL || k==keyL) {
-      return isLeft = b;
-    } 
-    if (kc == keyR ||k==keyR) {
-      return isRight = b;
-    } 
-    return b;
-  }
+boolean setMove(char kc, char k, boolean b) {
+  if (kc == keyU || k == keyU) {
+    return isUp = b;
+  } 
+  if (kc == keyL || k==keyL) {
+    return isLeft = b;
+  } 
+  if (kc == keyR ||k==keyR) {
+    return isRight = b;
+  } 
+  return b;
 }
