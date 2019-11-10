@@ -12,9 +12,6 @@ void setup() {
   Players.add(new Player("Tobias", 'w', 'a', 's', 'd'));
   Players.add(new Player("Charlie", (char) UP, (char) LEFT, (char) DOWN, (char) RIGHT));
 
-
-  // Levels.add(new Level(level1));
-
   Players.get(0).y = 400;
   Players.get(1).y = 500;
   Players.get(0).x = 400;
@@ -37,7 +34,7 @@ void keyPressed() {
   if (key == 'r') {
     try {
       Levels.get(currentLevel).killPlayers();
-    } 
+    }
     catch (ArrayIndexOutOfBoundsException e) {
       for (int i = 0; i < Players.size(); i++) {
         Players.get(i).x = width/2;
