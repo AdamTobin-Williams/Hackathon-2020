@@ -17,15 +17,17 @@ class Player {
   }
 
   public void move() {
+    println("moving");
+    /*
+    if (x <= 20) x = 20;
+     else if (x >= width-20) x = width-20;
+     else if (y <= 40) y = 40;
+     else if (y >= height) y = height;
+     */
+
     if (onGround) {
       if (isUp) {
         ys=-10;
-      }
-      if (isRight) {
-        xs+=speed;
-      }
-      if (isLeft) {
-        xs-=speed;
       }
     } else {
       if (isRight) {
@@ -39,14 +41,12 @@ class Player {
     x+=xs;
     y+=ys;
 
-
     if (onGround) {
       xs*=groundFrict;
     } else {
       xs*=airFrict;
       ys+=gravity;
     }
-    onGround = false;
   }
 
   public void display() {

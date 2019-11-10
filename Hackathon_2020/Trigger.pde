@@ -1,4 +1,4 @@
-class Trigger extends CollidableObject {
+abstract class Trigger extends CollidableObject {
 
   boolean triggered;
 
