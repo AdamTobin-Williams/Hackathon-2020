@@ -1,10 +1,11 @@
 // start x/y (and multiple)
 
+PImage img;
 ArrayList<CollidableObject> level1 = new ArrayList<CollidableObject>();
 
 Platform _p1 = new Platform(100, 600, 600, 100, color(250, 120, 0));
 Platform _p2 = new Platform(0, 750, 1200, 25, color(250, 0, 120));
-
+Platform _p3 = new Platform(300, 400, 100, 200, color(37, 217, 231));
 
 void setup() {
   size(1200, 800);
@@ -16,6 +17,9 @@ void setup() {
   Players.get(1).y = 500;
   Players.get(0).x = 400;
   Players.get(1).x = 500;
+  
+  img = loadImage("Tobias&Charlie.jpg");
+
 }
 
 void draw() {
@@ -25,8 +29,12 @@ void draw() {
     _p1.display();
     _p2.update(Players.get(i));
     _p2.display();
-    Players.get(i).display();
+    _p3.update(Players.get(i));
+    _p3.display();
     Players.get(i).move();
+  }
+  for (int i = 0; i < Players.size(); i++) {
+    Players.get(i).display();
   }
 }
 
@@ -34,8 +42,7 @@ void keyPressed() {
   if (key == 'r') {
     try {
       Levels.get(currentLevel).killPlayers();
-    }
-    catch (ArrayIndexOutOfBoundsException e) {
+    } catch (IndexOutOfBoundsException e) {
       for (int i = 0; i < Players.size(); i++) {
         Players.get(i).x = width/2;
         Players.get(i).y = width/2;

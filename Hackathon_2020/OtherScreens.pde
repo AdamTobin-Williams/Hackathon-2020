@@ -1,5 +1,3 @@
-
-PImage img = loadImage("Tobias&Charlie.jpg");
 void displayTitle() {
   background(0);
   image(img, 0, 0);
