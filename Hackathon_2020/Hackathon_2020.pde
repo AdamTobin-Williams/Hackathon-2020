@@ -1,6 +1,5 @@
 // start x/y (and multiple)
 
-PImage img;
 ArrayList<CollidableObject> level1 = new ArrayList<CollidableObject>();
 
 Platform _p1 = new Platform(100, 600, 600, 100, color(250, 120, 0));
