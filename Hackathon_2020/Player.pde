@@ -7,9 +7,6 @@ class Player {
   public final char keyU, keyL, keyD, keyR;
   public boolean onGround;
   public boolean isLeft, isRight, isUp, isDown;
-  public static final float airFrict = 0.99;
-  public static final float groundFrict = 0.95;
-  public static final float speed = 0.75;
 
   public Player (String name, char keyU, char keyL, char keyD, char keyR) {
     this.name = name;
@@ -20,15 +17,23 @@ class Player {
   }
 
   public void move() {
-
-    if (isUp&&onGround) {
-      ys=-5;
-    }
-    if (isRight) {
-      xs+=speed;
-    }
-    if (isLeft) {
-      xs-=speed;
+    if (onGround) {
+      if (isUp) {
+        ys=-10;
+      }
+      if (isRight) {
+        xs+=speed;
+      }
+      if (isLeft) {
+        xs-=speed;
+      }
+    } else {
+      if (isRight) {
+        xs+=speed*.5;
+      }
+      if (isLeft) {
+        xs-=speed*.5;
+      }
     }
 
     x+=xs;

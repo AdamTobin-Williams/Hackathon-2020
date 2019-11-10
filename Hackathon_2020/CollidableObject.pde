@@ -7,7 +7,6 @@ abstract class CollidableObject {
   color c;
 
   public boolean collide(Player p) {
-
     if (p.x+Player.w/2 > x  &&  p.x-Player.w/2 < x+w  &&  p.y > y  &&  p.y-Player.h < y+h) {
       return true;
     } else {
@@ -17,7 +16,6 @@ abstract class CollidableObject {
 
   public void display() {
     fill(c);
-
     rect(x, y, w, h);
   }
 }
